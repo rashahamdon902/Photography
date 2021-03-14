@@ -1,0 +1,377 @@
+prompt --application/pages/page_00004
+begin
+--   Manifest
+--     PAGE: 00004
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>41288019885784854896
+,p_default_application_id=>92174
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_PHOTO'
+);
+wwv_flow_api.create_page(
+ p_id=>4
+,p_user_interface_id=>wwv_flow_api.id(41297939157107068752)
+,p_name=>unistr('Rate a Photo \0642\064A\0651\0650\0645 \0627\0644\0635\0648\0631\0629')
+,p_alias=>unistr('RATE-A-PHOTO-\0642\064A\0645-\0627\0644\0635\0648\0631\0629')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('Rate a Photo \0642\064A\0645 \0627\0644\0635\0648\0631\0629')
+,p_autocomplete_on_off=>'OFF'
+,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
+,p_page_template_options=>'#DEFAULT#:ui-dialog--stretch'
+,p_page_is_public_y_n=>'Y'
+,p_protection_level=>'C'
+,p_last_updated_by=>'R.N.HAMDOUN90@GMAIL.COM'
+,p_last_upd_yyyymmddhh24miss=>'20210311090540'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(41298707025174026232)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(41297851565495068644)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'BODY'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select PHOTO_ID,',
+'       PHOTO_BLOB',
+'    --    PHOTO_NAME,',
+'    --    FIRST_NAME,',
+'    --    LAST_NAME,',
+'    --    APPROVED,',
+'    --    RATING,',
+'    --    SUB_DATE',
+'  from PHOTOS where PHOTO_ID = :P4_PHOTO_ID'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_read_only_when_type=>'ALWAYS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_document_header=>'APEX'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'New'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(41298707184886026233)
+,p_max_row_count=>'1000000'
+,p_show_search_bar=>'N'
+,p_show_detail_link=>'N'
+,p_owner=>'R.N.HAMDOUN90@GMAIL.COM'
+,p_internal_uid=>41298707184886026233
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(41298707289500026234)
+,p_db_column_name=>'PHOTO_ID'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>unistr('Photo - \0627\0644\0635\0648\0631\0629')
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'IMAGE:PHOTOS:PHOTO_BLOB:PHOTO_ID::::::::'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(41298707315457026235)
+,p_db_column_name=>'PHOTO_BLOB'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'Photo Blob'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(41337522572401984294)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'413375226'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'PHOTO_ID:PHOTO_BLOB'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(41334705145839929767)
+,p_plug_name=>unistr('Rate a Photo \0642\064A\0645 \0627\0644\0635\0648\0631\0629')
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(41297824857047068619)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'BODY'
+,p_query_type=>'TABLE'
+,p_query_table=>'PHOTOS'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(41334711140828929776)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(41297825846851068620)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(41334711548887929776)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(41334711140828929776)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(41297915972481068717)
+,p_button_image_alt=>'Cancel'
+,p_button_position=>'REGION_TEMPLATE_CLOSE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(41334713666959929779)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(41334711140828929776)
+,p_button_name=>'SAVE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(41297915972481068717)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('Apply Changes - \0625\062D\0641\0638 \0627\0644\062A\063A\064A\064A\0631\0627\062A')
+,p_button_position=>'REGION_TEMPLATE_NEXT'
+,p_button_condition=>'P4_PHOTO_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(41334714044199929779)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(41334711140828929776)
+,p_button_name=>'CREATE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(41297915972481068717)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Create'
+,p_button_position=>'REGION_TEMPLATE_NEXT'
+,p_button_condition=>'P4_PHOTO_ID'
+,p_button_condition_type=>'ITEM_IS_NULL'
+,p_database_action=>'INSERT'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334705449165929767)
+,p_name=>'P4_PHOTO_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_is_query_only=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_source=>'PHOTO_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334706296323929769)
+,p_name=>'P4_PHOTO_NAME'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_prompt=>unistr('Photo Name _ \0625\0633\0645 \0627\0644\0635\0648\0631\0629:')
+,p_source=>'PHOTO_NAME'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_field_template=>wwv_flow_api.id(41297914669754068715)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334706660229929769)
+,p_name=>'P4_FIRST_NAME'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_source=>'FIRST_NAME'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334707088250929770)
+,p_name=>'P4_LAST_NAME'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_source=>'LAST_NAME'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334707435989929770)
+,p_name=>'P4_APPROVED'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_source=>'APPROVED'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334707840196929771)
+,p_name=>'P4_RATING'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_prompt=>unistr('Rating - \0627\0644\062A\0642\064A\064A\0645:')
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'STATIC:1;1,2;2,3;3,4;4,5;5'
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(41297914872342068715)
+,p_item_template_options=>'#DEFAULT#:t-Form-fieldContainer--large'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41334708292577929772)
+,p_name=>'P4_SUB_DATE'
+,p_source_data_type=>'DATE'
+,p_item_sequence=>80
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_item_source_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_source=>'SUB_DATE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(41680775112076659301)
+,p_name=>'P4_TIMER'
+,p_item_sequence=>90
+,p_item_plug_id=>wwv_flow_api.id(41334705145839929767)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_validation(
+ p_id=>wwv_flow_api.id(41680775241372659302)
+,p_validation_name=>'New'
+,p_validation_sequence=>10
+,p_validation=>'INSTR(:P4_TIMER,'',''||:P4_PHOTO_ID||'','') < 1'
+,p_validation2=>'PLSQL'
+,p_validation_type=>'EXPRESSION'
+,p_error_message=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'You Already Rated this image! -',
+unistr('\0644\0642\062F \0642\0645\062A \0628\062A\0642\064A\064A\0645 \0627\0644\0635\0648\0631\0629 \0645\0631\0651\0629.'),
+unistr('\064A\0631\062C\0649 \0639\062F\0645 \062A\0642\064A\064A\0645 \0627\0644\0635\0648\0631\0629 \0623\0643\062B\0631 \0645\0646 \0645\0631\0629')))
+,p_error_display_location=>'INLINE_WITH_FIELD_AND_NOTIFICATION'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(41334711643751929776)
+,p_name=>'Cancel Dialog'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(41334711548887929776)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(41334712405822929777)
+,p_event_id=>wwv_flow_api.id(41334711643751929776)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CANCEL'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(41298708598434026247)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'New'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin',
+'update photos set rating = 0,Rating_count=0,total_Ratings=0 where rating is null;',
+'-- update photos set RATING  = (:P4_RATING + total_Ratings)/Rating_count where PHOTO_ID = :P4_PHOTO_ID;',
+'update photos set Rating_count  = (Rating_count + 1), total_Ratings=(total_Ratings+ :P4_RATING), RATING=(total_Ratings + :P4_RATING)/(Rating_count+1) where PHOTO_ID = :P4_PHOTO_ID;',
+':P4_TIMER := :P4_TIMER || '','' || :P4_PHOTO_ID || '','' ;',
+'',
+'end;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(41334714813996929780)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_api.id(41334705145839929767)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>unistr('Process form Rate a Photo \0642\064A\0645 \0627\0644\0635\0648\0631\0629')
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(41334715216479929780)
+,p_process_sequence=>30
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(41334714494956929780)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_api.id(41334705145839929767)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>unistr('Initialize form Rate a Photo \0642\064A\0645 \0627\0644\0635\0648\0631\0629')
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.component_end;
+end;
+/
